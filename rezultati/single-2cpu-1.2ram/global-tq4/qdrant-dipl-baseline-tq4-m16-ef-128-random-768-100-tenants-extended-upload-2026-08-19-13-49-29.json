@@ -1,0 +1,33 @@
+{
+  "params": {
+    "experiment": "qdrant-dipl-baseline-tq4-m16-ef-128",
+    "engine": "qdrant",
+    "dataset": "random-768-100-tenants-extended",
+    "parallel": 16,
+    "batch_size": 1024,
+    "optimizers_config": {
+      "max_segment_size": 1000000,
+      "memmap_threshold": 10000000,
+      "max_optimization_threads": 0
+    },
+    "payload": {
+      "memory": "cached"
+    },
+    "hnsw_config": {
+      "m": 16,
+      "ef_construct": 128,
+      "memory": "cached",
+      "payload_m": 0
+    },
+    "quantization_config": {
+      "turbo": {
+        "bits": "bits4"
+      }
+    }
+  },
+  "results": {
+    "post_upload": {},
+    "upload_time": 102.35110243101371,
+    "total_time": 2130.839148643019
+  }
+}

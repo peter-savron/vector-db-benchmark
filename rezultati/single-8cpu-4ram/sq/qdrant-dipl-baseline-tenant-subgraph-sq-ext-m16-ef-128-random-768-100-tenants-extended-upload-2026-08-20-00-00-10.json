@@ -1,0 +1,33 @@
+{
+  "params": {
+    "experiment": "qdrant-dipl-baseline-tenant-subgraph-sq-ext-m16-ef-128",
+    "engine": "qdrant",
+    "dataset": "random-768-100-tenants-extended",
+    "parallel": 16,
+    "batch_size": 1024,
+    "optimizers_config": {
+      "max_segment_size": 1000000,
+      "memmap_threshold": 10000000,
+      "max_optimization_threads": 0
+    },
+    "payload": {
+      "memory": "cached"
+    },
+    "hnsw_config": {
+      "m": 0,
+      "ef_construct": 128,
+      "memory": "cached",
+      "payload_m": 16
+    },
+    "quantization_config": {
+      "scalar": {
+        "type": "int8"
+      }
+    }
+  },
+  "results": {
+    "post_upload": {},
+    "upload_time": 108.03134004201274,
+    "total_time": 148.23280725599034
+  }
+}

@@ -24,6 +24,7 @@ from engine.clients.pgvector import (
     PgVectorUploader,
 )
 from engine.clients.qdrant import QdrantConfigurator, QdrantSearcher, QdrantUploader
+from engine.clients.qdrant_custom import QdrantCustomConfigurator, QdrantCustomSearcher, QdrantCustomUploader
 from engine.clients.qdrant_hybrid import (
     QdrantHybridConfigurator,
     QdrantHybridSearcher,
@@ -43,6 +44,7 @@ from engine.clients.weaviate import (
 
 ENGINE_CONFIGURATORS = {
     "qdrant": QdrantConfigurator,
+    "qdrant_custom": QdrantCustomConfigurator,
     "qdrant_native": QdrantNativeConfigurator,
     "qdrant_hybrid": QdrantHybridConfigurator,
     "weaviate": WeaviateConfigurator,
@@ -55,6 +57,7 @@ ENGINE_CONFIGURATORS = {
 
 ENGINE_UPLOADERS = {
     "qdrant": QdrantUploader,
+    "qdrant_custom": QdrantCustomUploader,
     "qdrant_native": QdrantNativeUploader,
     "qdrant_hybrid": QdrantHybridUploader,
     "weaviate": WeaviateUploader,
@@ -67,6 +70,7 @@ ENGINE_UPLOADERS = {
 
 ENGINE_SEARCHERS = {
     "qdrant": QdrantSearcher,
+    "qdrant_custom": QdrantCustomSearcher,
     "qdrant_native": QdrantNativeSearcher,
     "qdrant_hybrid": QdrantHybridSearcher,
     "weaviate": WeaviateSearcher,

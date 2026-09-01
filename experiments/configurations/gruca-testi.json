@@ -1,0 +1,395 @@
+[
+    {
+        "name": "qdrant-dipl-sharding-3-shards-1-replica-tenant-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 3,
+            "sharding_method": "auto",
+            "replication_factor": 1,
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "payload_m": 16
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "cached"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 42,
+                "config": {
+                    "hnsw_ef": 1024
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-3-shards-3-replica-tenant-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 3,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "payload_m": 16
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "cached"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 42,
+                "config": {
+                    "hnsw_ef": 1024
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-3-replica-tenant-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "payload_m": 16
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "cached"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 42,
+                "config": {
+                    "hnsw_ef": 1024
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-1-replica-tenant-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 1,
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "payload_m": 16
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "cached"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 42,
+                "config": {
+                    "hnsw_ef": 1024
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    }
+
+]

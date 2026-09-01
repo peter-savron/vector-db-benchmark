@@ -1,0 +1,22 @@
+{
+  "params": {
+    "dataset": "random-768-100-tenants-extended",
+    "experiment": "qdrant-dipl-baseline-tenant-subgraph-m-16-ef-128",
+    "engine": "qdrant",
+    "parallel": 1,
+    "config": {
+      "hnsw_ef": 512
+    }
+  },
+  "results": {
+    "total_time": 272.25005462398985,
+    "mean_time": 0.1353808339916577,
+    "mean_precisions": 0.998,
+    "std_time": 0.08277611802076339,
+    "min_time": 0.007613848953042179,
+    "max_time": 0.5025855669518933,
+    "rps": 7.346187690438634,
+    "p95_time": 0.2342895255627809,
+    "p99_time": 0.29980875343899244
+  }
+}

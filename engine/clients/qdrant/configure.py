@@ -79,7 +79,7 @@ class QdrantConfigurator(BaseConfigurator):
         # By default, disable index building while uploading
         optimizers_config.setdefault("max_optimization_threads", 0)
 
-        self.client.recreate_collection(
+        self.client.create_collection(
             collection_name=QDRANT_COLLECTION_NAME,
             **vectors_config,
             **self.collection_params
@@ -88,9 +88,10 @@ class QdrantConfigurator(BaseConfigurator):
         for field_name, field_type in dataset.config.schema.items():
             if field_type in ["keyword", "uuid"]:
                 is_tenant = payload_index_params.get(field_name, {}).get(
-                    "is_tenant", None
+                    "is_tenant", False
                 )
                 on_disk = payload_index_params.get(field_name, {}).get("on_disk", None)
+                enable_hnsw = payload_index_params.get(field_name, {}).get("enable_hnsw", False)
 
                 self.client.create_payload_index(
                     collection_name=QDRANT_COLLECTION_NAME,
@@ -99,6 +100,7 @@ class QdrantConfigurator(BaseConfigurator):
                         type=self.INDEX_TYPE_MAPPING.get(field_type),
                         is_tenant=is_tenant,
                         on_disk=on_disk,
+                        enable_hnsw=enable_hnsw,
                     ),
                 )
             else:

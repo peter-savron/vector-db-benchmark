@@ -1,0 +1,3242 @@
+[
+    {
+        "name": "qdrant-dipl-network-limitations",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000,
+                "default_segment_number": 2
+            },
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 64
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 64
+                }
+            },
+            {
+                "parallel": 32,
+                "config": {
+                    "hnsw_ef": 64
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 64
+                }
+            },
+            {
+                "parallel": 128,
+                "config": {
+                    "hnsw_ef": 64
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 32,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 128,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 32,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 128,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 32,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 128,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+        {
+        "name": "qdrant-dipl-baseline-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 42,
+                "config": {
+                    "hnsw_ef": 1024
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-3-shards-1-replica-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 3,
+            "sharding_method": "auto",
+            "replication_factor": 1,
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128,
+                "memory": "pinned"
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-3-shards-3-replica-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 3,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-3-replica-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128,
+                "memory": "pinned"
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-1-replica-m-16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 1,
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128,
+                "memory": "pinned"
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-3-replica-tenant-subgraph",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "pinned"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-3-replica-small-segment",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 300000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128,
+                "memory": "pinned"
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-sharding-1-shard-3-replica-cached",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128,
+                "memory": "cached"
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq4-ext-2-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits4"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 32,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 32,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 32,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 32,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq4-ext-no-cache-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cold",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits4",
+                    "memory" : "cached"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq2-ext-no-cache-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cold",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits2",
+                    "memory" : "cached"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-sq-ext-no-cache-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cold",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "scalar": {
+                    "type" : "int8",
+                    "memory" : "cached"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq4-ext-no-oversample-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cold",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits4",
+                    "memory" : "cached"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-sq-ext-no-oversample-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cold",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "scalar": {
+                    "type" : "int8",
+                    "memory" : "cached"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": false
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq4-shard-1-replica-3-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits4"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq1-oversampled-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits1"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 32.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq1-flatscan-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000,
+                "indexing_threshold" : 100000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16,
+                "full_scan_threshold" : 100000
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits1"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-dipl-baseline-tenant-subgraph-tq1-flatscan-oversample-m16-ef-128",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000,
+                "indexing_threshold" : 100000
+            },
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 0,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16,
+                "full_scan_threshold" : 100000
+            },
+            "quantization_config": {
+                "turbo": {
+                    "bits" : "bits1"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            },
+            {
+                "parallel": 64,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 16.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-tenant-all-values",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30,
+            "https": false
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000
+            },
+            "shard_number": 1,
+            "sharding_method": "auto",
+            "replication_factor": 3,
+            "payload": {
+                "memory": "cached"
+            },
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128,
+                "memory": "cached",
+                "payload_m": 16
+            },
+            "quantization_config": {
+                "binary": {
+                    "memory": "pinned",
+                    "encoding": "one_bit",
+                    "query_encoding": "binary"
+                }
+            },
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "pinned"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    },
+    {
+        "name": "qdrant-rps-default",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000,
+                "default_segment_number": 2
+            },
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16
+        }
+    },
+    {
+        "name": "qdrant-rps-parallel",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000,
+                "default_segment_number": 2
+            },
+            "hnsw_config": {
+                "m": 16,
+                "ef_construct": 128
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 8,
+                "config": {
+                    "hnsw_ef": 128
+                }
+            },
+            {
+                "parallel": 16,
+                "config": {
+                    "hnsw_ef": 256
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 512
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16
+        }
+    },
+    {
+        "name": "qdrant-all-on-disk-scalar-q",
+        "engine": "qdrant",
+        "connection_params": {},
+        "collection_params": {
+            "optimizers_config": {
+                "default_segment_number": 17,
+                "max_optimization_threads": null
+            },
+            "quantization_config": {
+                "scalar": {
+                    "type": "int8",
+                    "quantile": 0.99,
+                    "always_ram": false
+                }
+            },
+            "vectors_config": {
+                "on_disk": true
+            },
+            "hnsw_config": {
+                "on_disk": true,
+                "m": 0,
+                "payload_m": 16
+            },
+            "on_disk_payload": true,
+            "payload_index_params": {
+                "a": {
+                    "is_tenant": true,
+                    "enable_hnsw": true,
+                    "memory": "pinned"
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 8
+            }
+        ],
+        "upload_params": {
+            "parallel": 4
+        }
+    },
+    {
+        "name": "qdrant-bq-rps-m-64-ef-512",
+        "engine": "qdrant",
+        "connection_params": {
+            "timeout": 30
+        },
+        "collection_params": {
+            "optimizers_config": {
+                "max_segment_size": 1000000,
+                "memmap_threshold": 10000000,
+                "default_segment_number": 2
+            },
+            "hnsw_config": {
+                "m": 64,
+                "ef_construct": 512
+            },
+            "quantization_config": {
+                "binary": {
+                    "always_ram": true
+                }
+            }
+        },
+        "search_params": [
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 1,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 64,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 128,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 256,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 1.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 2.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 4.0
+                    }
+                }
+            },
+            {
+                "parallel": 100,
+                "config": {
+                    "hnsw_ef": 512,
+                    "quantization": {
+                        "rescore": true,
+                        "oversampling": 8.0
+                    }
+                }
+            }
+        ],
+        "upload_params": {
+            "parallel": 16,
+            "batch_size": 1024
+        }
+    }
+]

@@ -1,0 +1,26 @@
+{
+  "params": {
+    "dataset": "random-768-100-tenants-extended",
+    "experiment": "qdrant-dipl-fullscan-tq4-m16-ef-128",
+    "engine": "qdrant",
+    "parallel": 1,
+    "config": {
+      "hnsw_ef": 512,
+      "quantization": {
+        "rescore": true,
+        "oversampling": 2.0
+      }
+    }
+  },
+  "results": {
+    "total_time": 14.679308969993144,
+    "mean_time": 0.006764815601432929,
+    "mean_precisions": 1.0,
+    "std_time": 0.0017265584496324738,
+    "min_time": 0.004293038975447416,
+    "max_time": 0.04556771297939122,
+    "rps": 136.24619551835306,
+    "p95_time": 0.009126028171158396,
+    "p99_time": 0.011371262532193213
+  }
+}

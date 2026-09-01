@@ -7,8 +7,8 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-qdrant-client = { git = "https://github.com/qdrant/qdrant-client.git", branch = "dev" }
-typer = "^0.27.1"
+qdrant-client = "1.19.0"
+typer = "^0.26.0"
 jsons = "^1.6.3"
 h5py = "^3.7.0"
 weaviate-client = ">=4.22.0,<4.23"

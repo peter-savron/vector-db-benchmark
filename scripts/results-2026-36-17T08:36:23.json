@@ -1,0 +1,33 @@
+[
+  {
+    "engine_name": "qdrant",
+    "setup_name": "qdrant-dipl-sharding-1-shard-3-replica-small-segment",
+    "dataset_name": "random-768-100-tenants",
+    "search_idx": "8",
+    "upload_time": 109.56683084499673,
+    "total_upload_time": 2500.855838388001,
+    "p95_time": 0.35261476550222126,
+    "rps": 206.2761969048347,
+    "parallel": 64,
+    "p99_time": 0.37903363203600743,
+    "mean_time": 0.20909690081098234,
+    "mean_precisions": 1.0,
+    "engine_params": {
+      "batch_size": 1024,
+      "hnsw_config": {
+        "ef_construct": 128,
+        "m": 16,
+        "memory": "pinned"
+      },
+      "hnsw_ef": 512,
+      "optimizers_config": {
+        "max_optimization_threads": 0,
+        "max_segment_size": 300000,
+        "memmap_threshold": 10000000
+      },
+      "replication_factor": 3,
+      "shard_number": 1,
+      "sharding_method": "auto"
+    }
+  }
+]

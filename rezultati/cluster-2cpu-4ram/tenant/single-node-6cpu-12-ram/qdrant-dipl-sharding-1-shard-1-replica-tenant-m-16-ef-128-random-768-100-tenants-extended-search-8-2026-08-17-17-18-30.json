@@ -1,0 +1,22 @@
+{
+  "params": {
+    "dataset": "random-768-100-tenants-extended",
+    "experiment": "qdrant-dipl-sharding-1-shard-1-replica-tenant-m-16-ef-128",
+    "engine": "qdrant",
+    "parallel": 64,
+    "config": {
+      "hnsw_ef": 256
+    }
+  },
+  "results": {
+    "total_time": 3.593324371991912,
+    "mean_time": 0.10458916215489444,
+    "mean_precisions": 0.9856,
+    "std_time": 0.03681653274712754,
+    "min_time": 0.02614843999617733,
+    "max_time": 0.277327529998729,
+    "rps": 556.5876589347057,
+    "p95_time": 0.17703197419759817,
+    "p99_time": 0.20054790182621218
+  }
+}
