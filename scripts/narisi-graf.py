@@ -1,3 +1,5 @@
+# Koda je bila generirana s pomočjo UI, izpopolnjena s strani avtorja
+
 import argparse
 import json
 import matplotlib.pyplot as plt

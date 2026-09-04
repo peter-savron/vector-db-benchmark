@@ -1,3 +1,5 @@
+# Koda je bila generirana s pomočjo UI, izpopolnjena s strani avtorja
+
 import json
 import locale
 from pathlib import Path
